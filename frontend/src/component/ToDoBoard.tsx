@@ -1,12 +1,15 @@
 import React from "react";
 import {Status} from "../model/ToDo";
+import {Todo} from "../model/ToDo";
+import ToDoCard from "./ToDoCard"
 
-export type ToDoBoard = {
-    ToDoList: ToDoCard[]
-    BoardStatus: Status
+export type ToDoBoardType = {
+    ToDoList: Todo[]
+    BoardStatus: string
 }
 
-export function ToDoBoard(props: ToDoBoard) {
+export default function ToDoBoard(props: ToDoBoardType) {
+
 
     //Filter alles was nicht im gewünschten Status ist
     const ToDoListFiltered = props.ToDoList.filter((toDoData) => {

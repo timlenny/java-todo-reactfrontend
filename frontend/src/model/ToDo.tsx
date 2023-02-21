@@ -4,7 +4,7 @@ export type Todo = {
 
     id: string,
     description: string,
-    ToDoStatus: Status
+    status: Status
 
 }
 

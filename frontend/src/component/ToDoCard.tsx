@@ -2,7 +2,7 @@ import React from "react";
 import {Todo} from "../model/ToDo";
 
 
-export type ToDoCard = {
+export type ToDoCardProps = {
     todo: Todo
 }
 
