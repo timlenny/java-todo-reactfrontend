@@ -10,7 +10,7 @@ export type Todo = {
 
 
 export enum Status {
-    OPEN,
-    IN_PROGRESS,
-    DONE,
+    OPEN = 'OPEN',
+    IN_PROGRESS = 'IN PROGRESS',
+    DONE = 'DONE',
 }

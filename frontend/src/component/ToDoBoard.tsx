@@ -1,5 +1,4 @@
 import React from "react";
-import {ToDoCard} from "./ToDoCard";
 import {Status} from "../model/ToDo";
 
 export type ToDoBoard = {
@@ -10,13 +9,20 @@ export type ToDoBoard = {
 export function ToDoBoard(props: ToDoBoard) {
 
     //Filter alles was nicht im gewünschten Status ist
-    const ToDoList = props.ToDoList.filter((toDoData) => {
-        if(toDoData.todo.ToDoStatus !== props.BoardStatus) return toDoData
+    const ToDoListFiltered = props.ToDoList.filter((toDoData) => {
+        if (toDoData.status === props.BoardStatus){
+            return toDoData;
+        } else {
+
+        }
     })
 
+
+
     //Map Data -> ToDo Cards
-    const ToDoCards = ToDoList.map((ToDoData) => {
-        return ToDoCard(ToDoData)
+    const ToDoCards = ToDoListFiltered.map((ToDoData) => {
+        console.log(ToDoData)
+        return <ToDoCard id={ToDoData.id} description={ToDoData.description} status={ToDoData.status}></ToDoCard>
     })
 
     return(
@@ -24,7 +30,5 @@ export function ToDoBoard(props: ToDoBoard) {
             {ToDoCards}
         </div>
     )
-
-
 
 }

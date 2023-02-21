@@ -1,16 +1,23 @@
 import React from "react";
 import {Todo} from "../model/ToDo";
 
+
 export type ToDoCard = {
     todo: Todo
 }
 
+export default function ToDoCard(props: Todo){
 
-export function ToDoCard(props: ToDoCard){
-    return (
-        <section>
-            <h1>{props.todo.description}</h1>
-            <a>Status: {props.todo.ToDoStatus}</a>
-        </section>
-    )
+    console.log(props.status)
+    const stat:string = props.status;
+
+        return (
+            <section>
+                <h1>{props.description}</h1>
+                <a>{stat}</a>
+            </section>
+        )
+
+
+
 }
